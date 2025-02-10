@@ -1,6 +1,9 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
+; Written by Michael Lawler aka FractalSystems/TryTryAgain
+; Version 1.0
+
 ; ----- CONFIGURATION -----
 numOfAircraft := 5                ; Defaults to 5 planes if '-numOfAircraft', 'n' is not provided in the -ArgumentList.
 keyDelay := 750                   ; Default delay (in milliseconds) between individual key presses.    | Going too fast can cause the game to miss inputs.
