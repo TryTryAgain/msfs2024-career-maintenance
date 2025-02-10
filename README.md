@@ -12,7 +12,7 @@ This only works with MSFS 2024 (for obvious reasons). Also, [https://autohotkey.
 
 ## How to use it?
 
-<video src="https://github.com/TryTryAgain/msfs2024-career-maintenance/raw/refs/heads/main/media/example.mp4" controls></video>
+https://github.com/user-attachments/assets/8164e216-e3cc-462e-9335-0f4ad0bdc5b4
 
 🚀🪂🛸🚀🤩💖✨
 
