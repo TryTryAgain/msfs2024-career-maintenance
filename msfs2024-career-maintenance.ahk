@@ -2,7 +2,7 @@
 #SingleInstance Force
 
 ; ----- CONFIGURATION -----
-numOfAircraft := 10               ; Defaults to 5 planes if '-numOfAircraft', 'n' is not provided in the -ArgumentList.
+numOfAircraft := 5                ; Defaults to 5 planes if '-numOfAircraft', 'n' is not provided in the -ArgumentList.
 keyDelay := 750                   ; Default delay (in milliseconds) between individual key presses.    | Going too fast can cause the game to miss inputs.
 cycleDelay := 1100                ; Default delay (in milliseconds) between complete aircraft cycles.  | Going too fast can cause the game to miss inputs.
 searchColor := 0xF59C00           ; Default (orange needs maintenance) color to search for.            | Use the Window Spy tool to find the color of the needs maintenance button.
