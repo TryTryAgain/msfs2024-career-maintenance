@@ -34,20 +34,22 @@ loop A_Args.Length
         needsMaintenance := (A_Args[A_Index + 1] = "true" || A_Args[A_Index + 1] = "y")
     
     if (arg = "-help" || arg = "-Help") {
-        MsgBox "Usage:`n" 
-            . "Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '5'`n"
-            . "Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '5', '-manageAndUpdate', 'true', '-washThePlane', 'y'`n"
+        MsgBox "Usage:`n"
+            . "To get this help message:`n"
+            . "Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-Help'`n"
             . "Examples:`n"
-            . "  Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '10', '-keyDelay', '500', '-cycleDelay', '1200'`n"
-            . "  Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '5', '-manageAndUpdate', 'true', '-washThePlane', 'y'`n"
+            . "Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '5'`n"
+            . "Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '5', '-delegatedMaintenance', 'true', '-washThePlane', 'y'`n"
+            . "Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '5', '-needsMaintenance', 'false'`n"
+            . "Start-Process -FilePath 'msfs2024-career-maintenance.ahk' -ArgumentList '-numOfAircraft', '10', '-keyDelay', '500', '-cycleDelay', '1000'`n"
             . "`n"
             . "Options:`n"
-            . "  -numOfAircraft [number] : Sets the number of aircraft to process.`n"
-            . "  -keyDelay [ms] : Sets the delay between key presses.`n"
-            . "  -cycleDelay [ms] : Sets the delay between full cycles.`n"
-            . "  -delegatedMaintenance [true/false or y/n] : Enables or disables the Delegated Maintenance steps.`n"
-            . "  -washThePlane [true/false or y/n] : Enables or disables the Wash The Plane steps.`n"
-            . "  -needsMaintenance [true/false or y/n] : Enables or disables the Needs Maintenance step.`n"
+            . "-numOfAircraft [number] : Sets the number of aircraft to process.`n"
+            . "-keyDelay [ms] : Sets the delay between key presses.`n"
+            . "-cycleDelay [ms] : Sets the delay between full cycles.`n"
+            . "-delegatedMaintenance [true/false or y/n] : Enables or disables the Delegated Maintenance steps.`n"
+            . "-washThePlane [true/false or y/n] : Enables or disables the Wash The Plane steps.`n"
+            . "-needsMaintenance [true/false or y/n] : Enables or disables the Needs Maintenance step.`n"
         ExitApp
     }
 }
