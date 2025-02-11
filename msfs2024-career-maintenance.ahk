@@ -2,7 +2,7 @@
 #SingleInstance Force
 
 ; Written by Michael Lawler aka FractalSystems/TryTryAgain
-; Version 1.0
+; Version 1.0.1
 
 ; ----- CONFIGURATION -----
 numOfAircraft := 5                ; Defaults to 5 planes if '-numOfAircraft', 'n' is not provided in the -ArgumentList.
