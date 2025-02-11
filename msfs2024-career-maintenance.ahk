@@ -64,13 +64,15 @@ ToolTip "FlightSimulator2024.exe is active. Starting repair sequence..."
 Sleep 2000
 ToolTip
 
+; Prevent the automation from entering "Buy aircraft" instead of properly selecting the first aircraft in the fleet.
 CoordMode "Mouse", "Screen"
-loop 4 ; Change 4 to the number of times you want to move the mouse
-{
-    MouseMove A_ScreenWidth - 1, A_ScreenHeight - 1
-    Sleep 100 ; Optional: Add a small delay between movements
+MouseMove A_ScreenWidth // 2, 10
+MouseClick "Left"
+actions := ["{Down 4}", "{Right 1}", "{Left 2}"]
+for action in actions {
+    Sleep 500 ; small delay between movements
+    Send action
 }
-Send "{Left 4}" ; Get to the first plane (instead of occasionally clicking Buy Aircraft)
 
 firstLoop := true
 for plane in Range(1, numOfAircraft)
