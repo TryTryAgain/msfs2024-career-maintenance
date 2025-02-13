@@ -76,7 +76,8 @@ or
 
 #### Download the script (using _one_ of the three methods below)
 
-- Download from Flightsim.to: [https://flightsim.to/file/88521/msfs2024-career-maintenance](https://flightsim.to/file/88521/msfs2024-career-maintenance)
+- Download the script from Flightsim.to: [https://flightsim.to/file/88521/msfs2024-career-maintenance](https://flightsim.to/file/88521/msfs2024-career-maintenance)
+- Download the source code from [Releases](https://github.com/TryTryAgain/msfs2024-career-maintenance/releases/)
 - Click into the [https://github.com/TryTryAgain/msfs2024-career-maintenance/blob/main/msfs2024-career-maintenance.ahk](https://github.com/TryTryAgain/msfs2024-career-maintenance/blob/main/msfs2024-career-maintenance.ahk) and click "Download raw file" to download only the script file alone.
 - Download the entire project as a zip: Code -> Download ZIP -> Extract
 - Clone the entire project with git/ssh in this example (HTTPS also available): `git clone git@github.com:TryTryAgain/msfs2024-career-maintenance.git`
