@@ -4,7 +4,7 @@
 ^c::ExitApp ; Press "Ctrl+C" at any time to exit the script
 
 ; Written by Michael Lawler aka FractalSystems/TryTryAgain
-; Version 1.1.1
+; Version 1.1.2
 
 ; ----- CONFIGURATION ----------; These variables can be changed to suit your needs or dynamically set by supplying the proper -ArgumentList argument+value.
 numOfAircraft := 5              ; Defaults to 5 planes if '-numOfAircraft', 'n' is not provided in the -ArgumentList.
@@ -133,18 +133,22 @@ for plane in Range(startFrom, endAt)
         PerformUpdate()
     }
     
-    if (delegatedMaintenance)
+    if (delegatedMaintenance) {
         PerformDelegatedMaintenance()
-    
-    if (washThePlane)
-        PerformWashThePlane()
-    
-    if (needsMaintenance)
-        PerformNeedsMaintenance()
+    }
 
-    if (extendedMaintenance)
+    if (washThePlane) {
+        PerformWashThePlane()
+    }
+
+    if (needsMaintenance) {
+        PerformNeedsMaintenance()
+    }
+
+    if (extendedMaintenance) {
         PerformDeepMaintenance()
         PerformDeepMaintenance() ; Run it again as more could have been uncovered
+    }
 
     PerformExitPlaneMaintenance()
     

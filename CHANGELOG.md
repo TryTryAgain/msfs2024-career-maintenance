@@ -1,6 +1,12 @@
 # Changelog
 
+### v1.1.2 - 2025-02-23 - Whoops
+
+#### Fixed
+- Fixed `if` statements, multiline needed to be wrapped in `{}`. Otherwise it was running the second extendedMaintenance check even if extendedMaintenance was not equal to true.
+
 ### v1.1.1 - 2025-02-13 - Stuff
+
 #### Added
 - Added `^c::ExitApp ; Press "Ctrl+C" at any time to exit the script` (sometimes you may need to press `CTRL+C` multiple times...)
 - Added "Out of order" maintenance handling.
