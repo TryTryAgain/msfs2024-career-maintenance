@@ -1,5 +1,15 @@
 # Changelog
 
+### v1.2.3 - 2024-02-24 - 
+
+#### Added
+
+- Added timer, total/elapsed time in HH:MM:SS printed in the final `MsgBox` dialog.
+
+#### Changed
+
+- `keyDelay` 200ms -> 300ms ... as I noticed a few getting missed when operating on large fleets.
+
 ### v1.1.2 - 2025-02-23 - Whoops
 
 #### Fixed

@@ -4,7 +4,7 @@
 ^c::ExitApp ; Press "Ctrl+C" at any time to exit the script
 
 ; Written by Michael Lawler aka FractalSystems/TryTryAgain
-; Version 1.1.2
+; Version 1.2.3
 
 ; ----- CONFIGURATION ----------; These variables can be changed to suit your needs or dynamically set by supplying the proper -ArgumentList argument+value.
 numOfAircraft := 5              ; Defaults to 5 planes if '-numOfAircraft', 'n' is not provided in the -ArgumentList.
@@ -15,7 +15,7 @@ updateCheckUp := true           ; Default for Update check up. | This is set to 
 extendedMaintenance := false    ; Default for Deep/Extended Maintenance. | This is set to false by default, enable it with '-extendedMaintenance', 'true' if needed.
 ; ------------------------------;
 ; ------------------------------; The variables below shouldn't have to change but there if you need/want to.
-keyDelay := 200                 ; Default delay (in milliseconds) between individual key presses.    | Going too fast can cause the game to miss inputs.
+keyDelay := 300                 ; Default delay (in milliseconds) between individual key presses.    | Going too fast can cause the game to miss inputs.
 maintenanceDelay := 900         ; Default delay (in milliseconds) between individual key presses specific to performing maintenance. | Going too fast can cause the game to miss inputs.
 cycleDelay := 800               ; Default delay (in milliseconds) between complete aircraft cycles.  | Going too fast can cause the game to miss inputs.
 toMaintainColor := 0xF59C00     ; Default (orange "To maintain") color to search for. | Use the AHK Window Spy tool to find the color of the needs maintenance button.
@@ -88,6 +88,9 @@ loop A_Args.Length
     }
 }
 
+; Start the timer
+startTime := A_TickCount
+
 ; Initialize startFrom and endAt after parsing arguments
 startFrom := startFrom ? startFrom : 1 ; Default value, if -startFrom is not provided
 endAt := numOfAircraft ; Default value, if -endAt is not provided
@@ -155,8 +158,15 @@ for plane in Range(startFrom, endAt)
     firstLoop := false
 }
 
+; Calculate the elapsed time
+elapsedTime := A_TickCount - startTime
+hours := Floor(elapsedTime / 3600000)
+minutes := Floor(Mod(elapsedTime, 3600000) / 60000)
+seconds := Floor(Mod(elapsedTime, 60000) / 1000)
+formattedTime := Format("{:02}:{:02}:{:02}", hours, minutes, seconds)
+
 actualProcessed := endAt - startFrom + 1
-MsgBox "The repair sequence for " . actualProcessed . " aircraft (from " . startFrom . " to " . endAt . ") out of " . numOfAircraft . " total aircraft in your company has completed."
+MsgBox "The repair sequence for " . actualProcessed . " aircraft (from " . startFrom . " to " . endAt . ") out of " . numOfAircraft . " total aircraft in your company has completed.`nElapsed time: " . formattedTime
 ExitApp
 
 SelectPlane(plane) {
