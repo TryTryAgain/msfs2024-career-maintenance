@@ -136,13 +136,3 @@ If Maintenance is needed on the General section (because it doesn't have both a 
 Currently, there's no way to do what I'd call "deep maintenance inspection analysis" or extended maintenance... it is something I will look to add. What I mean by this is for those cases when even running all update checks and delegated maintenance tasks the mechanic continues to show a now hazier maintenance color but there is nothing left with "To maintain" from the main screen for that plane. In this case you would typically go into each section's Details and check for individual items that are lower than a certain threshold (like less than half) and then only repair those. That's what I will look to do with an additional function for "deepMaintenanceInspectionAnalysis" that will attempt to do just that. See [FEATURE REQUEST - Add the ability to perform extended maintenance](https://github.com/TryTryAgain/msfs2024-career-maintenance/issues/5).
 
 Currently, this script only works from within an individual company (ie: it must be run for each company you have individually). Eventually, I think it would be nice to make the script able to be run "for all companies" and that would also add the feature to check the company stats and automatically grab the number of aircraft for each company as well...something that's currently a manual task and needs to be supplied with the `Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "5"` method of running/starting the script. Eventually the script can always be ready, without a terminal, and instead initiated via some keyboard shortcut. See [FEATURE REQUEST - Run for all companies](https://github.com/TryTryAgain/msfs2024-career-maintenance/issues/4).
-
-
-Faster 
-`Measure-Command { Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "42", "-keyDelay", "200", "-cycleDelay", "800" -Wait }`
-
-Buy aircraft issue again
-Was working well with large fleets for multiple companies until I tried it with a company with a single plane (lazy me, lol)... but it gave me an edge case to fix and hopefully makes it more stable overall (and will eventually be used to grab the number of aircraft in the fleet automatically) so all good.
-
-Ability to run from startFrom and/or endAt range
-Useful for doing a subset of your fleet to/from a certain point. Or if something went wrong before being able to pick up.
