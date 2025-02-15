@@ -74,7 +74,7 @@ or
 
 ### Step-by-step
 
-#### Download the script (using _one_ of the three methods below)
+#### Download the script (using _one_ of the methods below)
 
 - Download the script from Flightsim.to: [https://flightsim.to/file/88521/msfs2024-career-maintenance](https://flightsim.to/file/88521/msfs2024-career-maintenance)
 - Download the source code from [Releases](https://github.com/TryTryAgain/msfs2024-career-maintenance/releases/)
