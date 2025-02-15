@@ -1,6 +1,6 @@
 # Changelog
 
-### v1.2.3 - 2024-02-24 - Time
+### v1.2.3 - 2025-02-14 - Time
 
 #### Added
 
@@ -10,7 +10,7 @@
 
 - `keyDelay` 200ms -> 300ms ... as I noticed a few getting missed when operating on large fleets.
 
-### v1.1.2 - 2025-02-23 - Whoops
+### v1.1.2 - 2025-02-13 - Whoops
 
 #### Fixed
 - Fixed `if` statements, multiline needed to be wrapped in `{}`. Otherwise it was running the second extendedMaintenance check even if extendedMaintenance was not equal to true.
