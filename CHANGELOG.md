@@ -1,5 +1,22 @@
 # Changelog
 
+### v1.3.5 - 2025-02-17 - Cruise Control
+
+#### Added
+
+- BETA: Ability to bulk toggle Crew On/Off for a company's fleet (or range within)
+  - See [the GitHub issue for more info](https://github.com/TryTryAgain/msfs2024-career-maintenance/issues/1)
+  - Initial support for English (en-US), German (de-DE), French (fr-FR), and Norwegian (nb-NO)
+- Added/split `navDelay` default 150ms (considerably increases speed on large fleets)
+- Also added a `crewDelay` default sleep of 500ms
+
+#### Changed
+
+- More defaults (many times faster overall)
+  - `cycleDelay` 800ms -> 1000ms
+  - removed unnecessary tooltips and sleeps
+  - 
+
 ### v1.2.3 - 2025-02-14 - Time
 
 #### Added

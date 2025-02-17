@@ -72,6 +72,14 @@ or
 
 `Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "42", "-extendedMaintenance", "y"`
 
+#### Toggle Crew "On" for an entire fleet (of 55 aircraft, in this example)
+
+`Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "55", "-crewToggle", "On"`
+
+#### Toggle Crew "Off" for a specific range (+- ~2 aircraft, not perfect)
+
+`Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "55", "-crewToggle", "Off", "-startFrom", "5", "-endAt", "15"`
+
 ### Step-by-step
 
 #### Download the script (using _one_ of the methods below)
@@ -136,3 +144,5 @@ If Maintenance is needed on the General section (because it doesn't have both a 
 Currently, there's no way to do what I'd call "deep maintenance inspection analysis" or extended maintenance... it is something I will look to add. What I mean by this is for those cases when even running all update checks and delegated maintenance tasks the mechanic continues to show a now hazier maintenance color but there is nothing left with "To maintain" from the main screen for that plane. In this case you would typically go into each section's Details and check for individual items that are lower than a certain threshold (like less than half) and then only repair those. That's what I will look to do with an additional function for "deepMaintenanceInspectionAnalysis" that will attempt to do just that. See [FEATURE REQUEST - Add the ability to perform extended maintenance](https://github.com/TryTryAgain/msfs2024-career-maintenance/issues/5).
 
 Currently, this script only works from within an individual company (ie: it must be run for each company you have individually). Eventually, I think it would be nice to make the script able to be run "for all companies" and that would also add the feature to check the company stats and automatically grab the number of aircraft for each company as well...something that's currently a manual task and needs to be supplied with the `Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "5"` method of running/starting the script. Eventually the script can always be ready, without a terminal, and instead initiated via some keyboard shortcut. See [FEATURE REQUEST - Run for all companies](https://github.com/TryTryAgain/msfs2024-career-maintenance/issues/4).
+
+This has only been tested by me (please report issues). I've only tested it on 1920x1080 resolution (and certain things are positional and pixel based...like where to search for colors on the screen). Also, as I add more specifics regarding advanced/extended maintenance or plane management English will always be primary only, all languages will not automatically be supported, as it will require searching for words (although I will share how it was accomplished and will consider what would be needed to support multiple languages) and will look to add other languages if there is interest. Please comment on [this issue](https://github.com/TryTryAgain/msfs2024-career-maintenance/issues/1) or open a new one to get support for your language added.
