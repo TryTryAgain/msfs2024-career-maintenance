@@ -15,7 +15,6 @@
 - More defaults (many times faster overall)
   - `cycleDelay` 800ms -> 1000ms
   - removed unnecessary tooltips and sleeps
-  - 
 
 ### v1.2.3 - 2025-02-14 - Time
 
