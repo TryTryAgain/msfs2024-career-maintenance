@@ -1,5 +1,17 @@
 # Changelog
 
+### v1.4.7 - 2025-03-07 - 
+
+#### Added
+
+- Added the ability to Sell Aircraft, using `Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "42", "-sellAircraft", "y"` for example.
+
+#### Changed
+
+- Updated to support SU1 1.3.23.0, changed the "To maintain" color from `0xF59C00` to the new darker orange `0xF57900`. A reminder that Under "Accessibility"->"User interface and font" game settings, only the "Default" "Main Color" color scheme is supported.
+
+- Increased a couple Sleep delays, regarding Manage and Update functions.
+
 ### v1.3.5 - 2025-02-17 - Cruise Control
 
 #### Added

@@ -80,6 +80,14 @@ or
 
 `Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "55", "-crewToggle", "Off", "-startFrom", "5", "-endAt", "15"`
 
+#### Sell aircraft (defaults to false)
+
+`Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "42", "-sellAircraft", "y"`
+
+#### Sell aircraft (defaults to false) via a specific range
+
+`Start-Process -FilePath "msfs2024-career-maintenance.ahk" -ArgumentList "-numOfAircraft", "42", "-sellAircraft", "y", "-startFrom", "5", "-endAt", "15"`
+
 ### Step-by-step
 
 #### Download the script (using _one_ of the methods below)

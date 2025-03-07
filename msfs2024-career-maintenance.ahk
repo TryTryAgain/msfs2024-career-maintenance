@@ -23,7 +23,7 @@ navDelay := 150                 ; Default delay (in milliseconds) between naviga
 maintenanceDelay := 900         ; Default delay (in milliseconds) between individual key presses specific to performing maintenance. | Going too fast can cause the game to miss inputs.
 crewDelay := 500                ; Default delay (in milliseconds) between crew toggle key presses. | Going too fast can cause the game to miss inputs.
 cycleDelay := 1000              ; Default delay (in milliseconds) between complete aircraft cycles.  | Going too fast can cause the game to miss inputs.
-toMaintainColor := 0xF59C00     ; Default (orange "To maintain") color to search for. | Use the AHK Window Spy tool to find the color of the needs maintenance button.
+toMaintainColor := 0xF57900     ; Default (new dark orange "To maintain") color to search for. | Use the AHK Window Spy tool to find the color of the needs maintenance button.
 outOfOrderColor := 0xFA3636     ; Default (red "Out of order") color to search for. | Use the AHK Window Spy tool to find the color of the out of order button.
 clickNextColor := 0xFFDE03      ; Default (yellow "Next") color to search for. | Use the AHK Window Spy tool to find the color of the next button.
 extendedMaintColor := 0xAC731D  ; Default (green "Extended Delegated Maintenance") color to search for. | Use the AHK Window Spy tool to find the color of the extended maintenance button.
@@ -32,6 +32,7 @@ extendedMaintColor3 := 0xC38525 ; Default "Extended Tech + Delegated Maintenance
 startFrom := 1                  ; Default start from the first plane.
 endAt := numOfAircraft          ; Default end at the last plane.
 crewToggle := "no_run"          ; Default crew toggle, only runs when -crewToggle Argument and valid value supplied. | Use '-crewToggle', 'On' or 'Off' to turn Crew On or Off for your fleet.
+sellAircraft := false          ; Default sell aircraft, set to true to sell aircraft. | Use '-sellAircraft', 'true' to sell aircraft.
 ; ------------------------------;
 ; Parse named arguments
 loop A_Args.Length
@@ -59,6 +60,8 @@ loop A_Args.Length
         extendedMaintenance := (A_Args[A_Index + 1] = "true" || A_Args[A_Index + 1] = "y")
     if (arg = "-crewToggle" && A_Index < A_Args.Length)
         crewToggle := A_Args[A_Index + 1]
+    if (arg = "-sellAircraft" && A_Index < A_Args.Length)
+        sellAircraft := (A_Args[A_Index + 1] = "true" || A_Args[A_Index + 1] = "y")
     if (arg = "-help" || arg = "-Help") {
         MsgBox "Usage:`n"
             . "To get this help message:`n"
@@ -82,6 +85,7 @@ loop A_Args.Length
             . "-startFrom [number] : Sets the starting aircraft.`n"
             . "-endAt [number] : Sets the ending aircraft.`n"
             . "-crewToggle [On/Off or on/off] : Turn Crew On or Off.`n"
+            . "-sellAircraft [true/false or y/n] : Enables or disables the Sell Aircraft step.`n"
         ExitApp
     }
 }
@@ -128,10 +132,22 @@ for action in actions {
 firstLoop := true
 for plane in Range(startFrom, endAt)
 {
-    if !firstLoop
+    if (!firstLoop) {
         plane--
+    }
     
-    SelectPlane(plane)
+    if (sellAircraft) {
+        if (!firstLoop) {
+            planeLoop := startFrom - 1
+        } else {
+            planeLoop := startFrom
+        }
+        Sleep 300
+        SelectPlane(planeLoop)
+    } else {
+        Sleep 300
+        SelectPlane(plane)
+    }
 
     if (crewToggle = "on" || crewToggle = "off") {
         ; Capture the screen again for each plane
@@ -161,6 +177,10 @@ for plane in Range(startFrom, endAt)
         if (extendedMaintenance) {
             PerformDeepMaintenance()
             PerformDeepMaintenance() ; Run it again as more could have been uncovered
+        }
+
+        if (sellAircraft) {
+            PerformSellAircraft()
         }
 
         PerformExitPlaneMaintenance()
@@ -214,7 +234,7 @@ PerformUpdate() {
 Manage(times, delay) {
     for i in Range(1, times) {
         Send "{Space}"
-        Sleep delay
+        Sleep delay + 200
     }
 }
 
@@ -222,6 +242,9 @@ Update(times, delay) {
     for i in Range(1, times) {
         Send "{Space}"
         Sleep delay
+        if (i >= 3) {
+            Sleep delay * 2.5 ; Increase the delay by 2.5x after the third loop
+        }
         if (i = times) {
             Sleep delay
         }
@@ -248,6 +271,26 @@ PerformWashThePlane() {
         Send "{Space}"
         Sleep keyDelay
     }
+}
+
+PerformSellAircraft() {
+    Sleep 1000
+    for i in Range(1, 2) {
+        Send "{Left}"
+        Sleep navDelay
+    }
+    for i in Range(1, 2) {
+        Send "{Down}"
+        Sleep navDelay
+    }
+    Send "{Space}"
+    Sleep keyDelay
+    for i in Range(1, 2) {
+        Send "{Down}"
+        Sleep keyDelay
+    }
+    Send "{Space}"
+    Sleep keyDelay
 }
 
 PerformNeedsMaintenance() {
