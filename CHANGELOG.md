@@ -1,6 +1,6 @@
 # Changelog
 
-### v1.4.7 - 2025-03-07 - 
+### v1.4.7 - 2025-03-07 - Time to sell
 
 #### Added
 
