@@ -7,7 +7,7 @@ CoordMode("Pixel", "Screen")
 ^c::ExitApp ; Press "Ctrl+C" at any time to exit the script
 
 ; Written by Michael Lawler aka FractalSystems/TryTryAgain
-; Version 1.3.5
+; Version 1.4.7
 
 ; ----- CONFIGURATION ----------; These variables can be changed to suit your needs or dynamically set by supplying the proper -ArgumentList argument+value.
 numOfAircraft := 5              ; Defaults to 5 planes if '-numOfAircraft', 'n' is not provided in the -ArgumentList.
