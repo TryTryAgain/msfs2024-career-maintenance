@@ -1,8 +1,16 @@
-# msfs2024-career-maintenance
+<div>
+  <img src="media/msfs2024-career-maintenance.png" alt="MSFS 2024 Career Maintenance" width="42" align="left">
+  <h1>msfs2024-career-maintenance</h1>
+</div>
 
-<center>🚨🚁 THIS IS PROVIDED AS IS WITHOUT ANY WARRANTY OR GUARANTEE 🚁🚨
+<div align="center">
+🚨🚁 THIS IS PROVIDED AS IS WITHOUT ANY WARRANTY OR GUARANTEE 🚁🚨
 
-🚨🚁 THE AUTHOR IS NOT LIABLE FOR ANY DAMAGES OR LOSSES. 🚁🚨</center>
+🚨🚁 THE AUTHOR IS NOT LIABLE FOR ANY DAMAGES OR LOSSES. 🚁🚨
+</div>
+
+---
+<br>
 
 `msfs2024-career-maintenance` is my best attempt to ease the monotony of performing recurring maintenance on a company's fleet of aircraft in MSFS 2024 Career Mode.
 
