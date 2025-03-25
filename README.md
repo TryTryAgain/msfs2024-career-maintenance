@@ -1,7 +1,15 @@
-<div>
-  <img src="media/msfs2024-career-maintenance.png" alt="MSFS 2024 Career Maintenance" width="42" align="left">
-  <h1>msfs2024-career-maintenance</h1>
+<div id="user-content-toc">
+  <img src="media/msfs2024-career-maintenance.png" alt="MSFS 2024 Career Maintenance" width="80" align="left">
+    <ul style="list-style: none;">
+    <summary>
+      <h1><b>msfs2024-career-maintenance</b></h1>
+    </summary>
+  </ul>
 </div>
+
+`msfs2024-career-maintenance` is my best attempt to ease the monotony of performing recurring maintenance on a company's fleet of aircraft in MSFS 2024 Career Mode.
+
+---
 
 <div align="center">
 🚨🚁 THIS IS PROVIDED AS IS WITHOUT ANY WARRANTY OR GUARANTEE 🚁🚨
@@ -10,9 +18,8 @@
 </div>
 
 ---
-<br>
 
-`msfs2024-career-maintenance` is my best attempt to ease the monotony of performing recurring maintenance on a company's fleet of aircraft in MSFS 2024 Career Mode.
+
 
 ## Prerequisites
 
