@@ -19,6 +19,8 @@
 
 `msfs2024-career-maintenance` is my best attempt to ease the monotony of performing recurring maintenance on a company's fleet of aircraft in MSFS 2024 Career Mode.
 
+---
+
 ## Prerequisites
 
 This only works with MSFS 2024 (for obvious reasons). Also, [https://autohotkey.com/](https://autohotkey.com/) v2.0+ is required and must be installed and functional on your machine.
